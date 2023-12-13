@@ -30,7 +30,7 @@ export interface Contact {
      */
     firstName: string;
     /**
-     * Middle name
+     * Middle initial
      */
     middleInitial?: string;
     /**
