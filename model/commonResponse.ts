@@ -11,8 +11,8 @@
  */
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
+export interface CommonResponse { 
+    data: Array<object>;
     success: boolean;
     error: object;
 }

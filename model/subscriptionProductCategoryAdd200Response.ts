@@ -9,10 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { SubscriptionProductCategoryAdd200ResponseAllOfDataInner } from './subscriptionProductCategoryAdd200ResponseAllOfDataInner';
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
+export interface SubscriptionProductCategoryAdd200Response { 
+    data: Array<SubscriptionProductCategoryAdd200ResponseAllOfDataInner>;
     success: boolean;
     error: object;
 }

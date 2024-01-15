@@ -9,10 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ShowFloor200ResponseAllOfDataInner } from './showFloor200ResponseAllOfDataInner';
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
+export interface ShowFloor200Response { 
+    data: Array<ShowFloor200ResponseAllOfDataInner>;
     success: boolean;
     error: object;
 }

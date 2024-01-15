@@ -9,10 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { SettingsOrganization200ResponseAllOfDataInner } from './settingsOrganization200ResponseAllOfDataInner';
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
+export interface SettingsOrganization200Response { 
+    data: Array<SettingsOrganization200ResponseAllOfDataInner>;
     success: boolean;
     error: object;
 }

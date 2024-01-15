@@ -11,9 +11,13 @@
  */
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
-    success: boolean;
-    error: object;
+export interface SubscriptionProductAdd200ResponseAllOfDataInner { 
+    itemName?: string | null;
+    description?: string | null;
+    /**
+     * An amount in the smallest denomination (e.g. cents/pence)
+     */
+    price?: number | null;
+    coverLevel?: number | null;
 }
 

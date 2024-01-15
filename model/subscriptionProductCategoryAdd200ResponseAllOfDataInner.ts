@@ -11,9 +11,8 @@
  */
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
-    success: boolean;
-    error: object;
+export interface SubscriptionProductCategoryAdd200ResponseAllOfDataInner { 
+    categoryName?: string | null;
+    description?: string | null;
 }
 

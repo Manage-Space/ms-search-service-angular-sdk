@@ -9,10 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { MoveOut200ResponseAllOfDataInner } from './moveOut200ResponseAllOfDataInner';
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
+export interface MoveOut200Response { 
+    data: Array<MoveOut200ResponseAllOfDataInner>;
     success: boolean;
     error: object;
 }

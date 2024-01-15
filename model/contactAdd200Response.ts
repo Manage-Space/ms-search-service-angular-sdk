@@ -9,10 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ContactAdd200ResponseAllOfDataInner } from './contactAdd200ResponseAllOfDataInner';
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
+export interface ContactAdd200Response { 
+    data: Array<ContactAdd200ResponseAllOfDataInner>;
     success: boolean;
     error: object;
 }

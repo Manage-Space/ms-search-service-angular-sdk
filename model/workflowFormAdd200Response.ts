@@ -9,10 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { WorkflowFormAdd200ResponseAllOfDataInner } from './workflowFormAdd200ResponseAllOfDataInner';
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
+export interface WorkflowFormAdd200Response { 
+    data: Array<WorkflowFormAdd200ResponseAllOfDataInner>;
     success: boolean;
     error: object;
 }

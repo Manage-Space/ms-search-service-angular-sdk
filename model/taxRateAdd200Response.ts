@@ -9,10 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { TaxRateAdd200ResponseAllOfDataInner } from './taxRateAdd200ResponseAllOfDataInner';
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
+export interface TaxRateAdd200Response { 
+    data: Array<TaxRateAdd200ResponseAllOfDataInner>;
     success: boolean;
     error: object;
 }

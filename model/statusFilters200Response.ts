@@ -9,10 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { StatusFilters200ResponseAllOfDataInner } from './statusFilters200ResponseAllOfDataInner';
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
+export interface StatusFilters200Response { 
+    data: Array<StatusFilters200ResponseAllOfDataInner>;
     success: boolean;
     error: object;
 }

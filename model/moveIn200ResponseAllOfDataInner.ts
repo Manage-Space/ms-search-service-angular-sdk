@@ -11,9 +11,15 @@
  */
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
-    success: boolean;
-    error: object;
+export interface MoveIn200ResponseAllOfDataInner { 
+    accountName?: string | null;
+    companyName?: string | null;
+    firstName?: string | null;
+    lastName?: string | null;
+    unitName?: string | null;
+    /**
+     * A date in YYYY-MM-DD format
+     */
+    moveInDate?: string | null;
 }
 

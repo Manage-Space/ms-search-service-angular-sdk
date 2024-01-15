@@ -11,9 +11,12 @@
  */
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
-    success: boolean;
-    error: object;
+export interface MoveOut200ResponseAllOfDataInner { 
+    accountName?: string | null;
+    unitName?: string | null;
+    /**
+     * A date in YYYY-MM-DD format
+     */
+    moveOutDate?: string | null;
 }
 

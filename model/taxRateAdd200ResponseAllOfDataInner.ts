@@ -11,9 +11,8 @@
  */
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
-    success: boolean;
-    error: object;
+export interface TaxRateAdd200ResponseAllOfDataInner { 
+    taxTypeName?: string | null;
+    percent?: number | null;
 }
 

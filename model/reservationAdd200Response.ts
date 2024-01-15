@@ -9,10 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ReservationAdd200ResponseAllOfDataInner } from './reservationAdd200ResponseAllOfDataInner';
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
+export interface ReservationAdd200Response { 
+    data: Array<ReservationAdd200ResponseAllOfDataInner>;
     success: boolean;
     error: object;
 }

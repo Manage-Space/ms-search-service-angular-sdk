@@ -11,9 +11,7 @@
  */
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
-    success: boolean;
-    error: object;
+export interface ShowFloor200ResponseAllOfDataInner { 
+    floor?: number | null;
 }
 

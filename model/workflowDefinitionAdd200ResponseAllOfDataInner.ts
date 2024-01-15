@@ -11,9 +11,9 @@
  */
 
 
-export interface SmartSearch200Response { 
-    data: Array<string>;
-    success: boolean;
-    error: object;
+export interface WorkflowDefinitionAdd200ResponseAllOfDataInner { 
+    workflowDescription?: string | null;
+    trigger?: string | null;
+    steps?: Array<string> | null;
 }
 
