@@ -139,6 +139,7 @@ export class DefaultService {
 
     /**
      * Change Site
+     * Change the current site
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -211,6 +212,7 @@ export class DefaultService {
 
     /**
      * Add Contact
+     * Add new contact (includes individual or company)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -282,7 +284,8 @@ export class DefaultService {
     }
 
     /**
-     * Contact List
+     * List Contact(s)
+     * List contact(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -354,7 +357,8 @@ export class DefaultService {
     }
 
     /**
-     * Event List
+     * List Event(s)
+     * List event(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -427,6 +431,7 @@ export class DefaultService {
 
     /**
      * Add Fee
+     * Add new type of fee
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -498,7 +503,8 @@ export class DefaultService {
     }
 
     /**
-     * Fee List
+     * List Fee(s)
+     * List fee type(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -570,7 +576,8 @@ export class DefaultService {
     }
 
     /**
-     * Invoice List
+     * List Invoice(s)
+     * List invoice(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -642,7 +649,8 @@ export class DefaultService {
     }
 
     /**
-     * Ledger List
+     * List Ledger(s)
+     * List ledger(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -715,6 +723,7 @@ export class DefaultService {
 
     /**
      * Log Out
+     * Log out of the system
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -787,6 +796,7 @@ export class DefaultService {
 
     /**
      * Move In
+     * Move a customer into a unit
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -859,6 +869,7 @@ export class DefaultService {
 
     /**
      * Move Out
+     * Move a customer out of a unit
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -931,6 +942,7 @@ export class DefaultService {
 
     /**
      * Notifications
+     * View the notifications screen
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1003,6 +1015,7 @@ export class DefaultService {
 
     /**
      * Add Pricing Group
+     * Add new pricing group
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1074,7 +1087,8 @@ export class DefaultService {
     }
 
     /**
-     * Pricing Group List
+     * List Pricing Group(s)
+     * List pricing group(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1147,6 +1161,7 @@ export class DefaultService {
 
     /**
      * Add Product
+     * Add new product/merchandise item
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1219,6 +1234,7 @@ export class DefaultService {
 
     /**
      * Add Product Category
+     * Add new product/merchandise item category
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1290,7 +1306,8 @@ export class DefaultService {
     }
 
     /**
-     * Product Category List
+     * List Product Category(s)
+     * List product/merchandise item category/ies
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1362,7 +1379,8 @@ export class DefaultService {
     }
 
     /**
-     * Product List
+     * List Product(s)
+     * List product(s)/merchandise item(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1435,6 +1453,7 @@ export class DefaultService {
 
     /**
      * Release Notes
+     * Show platform release notes
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1506,7 +1525,8 @@ export class DefaultService {
     }
 
     /**
-     * Rental List
+     * List Rental(s)
+     * List rental(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1578,7 +1598,8 @@ export class DefaultService {
     }
 
     /**
-     * Report
+     * Run a Report
+     * Generate/run a report, including performing any database query to calculate totals or other data
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1651,6 +1672,7 @@ export class DefaultService {
 
     /**
      * Add Reservation
+     * Make a new reservation for a unit
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1722,7 +1744,8 @@ export class DefaultService {
     }
 
     /**
-     * Reservation List
+     * List Reservation(s)
+     * List reservation(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1795,6 +1818,7 @@ export class DefaultService {
 
     /**
      * Reset Data
+     * Reset data
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1867,6 +1891,7 @@ export class DefaultService {
 
     /**
      * Appearance Settings
+     * Update appearance settings incl. light/dark mode, unit status color, and showing grid/labels on the 3D map
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1939,6 +1964,7 @@ export class DefaultService {
 
     /**
      * Language Settings
+     * Update language settings
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2011,6 +2037,7 @@ export class DefaultService {
 
     /**
      * Organization Settings
+     * Update organization settings incl. name, description, currency, days before late/lien/overlocked/move-out, prorate move-out threshold date, notification delay, max reminder attempts, billing cycle type or timezone
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2083,6 +2110,7 @@ export class DefaultService {
 
     /**
      * Show Floor
+     * Show specific floor on 3D map
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2228,6 +2256,7 @@ export class DefaultService {
 
     /**
      * Status Filters
+     * Set active unit status filters
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2300,6 +2329,7 @@ export class DefaultService {
 
     /**
      * Add Subscription Product
+     * Add new subscription product item
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2372,6 +2402,7 @@ export class DefaultService {
 
     /**
      * Add Subscription Product Category
+     * Add new subscription product item category
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2444,6 +2475,7 @@ export class DefaultService {
 
     /**
      * Subscription Product Category List
+     * List subscription product item category/ies
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2515,7 +2547,8 @@ export class DefaultService {
     }
 
     /**
-     * List Subscription Products
+     * List Subscription Product(s)
+     * List subscription product item(s), incl. insurance but excl. rentals
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2588,6 +2621,7 @@ export class DefaultService {
 
     /**
      * Add Tax Rate
+     * Add new tax rate
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2659,7 +2693,8 @@ export class DefaultService {
     }
 
     /**
-     * Tax Rate List
+     * List Tax Rate(s)
+     * List tax rate(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2732,6 +2767,7 @@ export class DefaultService {
 
     /**
      * Top Down View
+     * Move camera on 3D map to display a top-down view of the facility
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2803,7 +2839,8 @@ export class DefaultService {
     }
 
     /**
-     * Transaction List
+     * List Transaction(s)
+     * List transaction(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2875,7 +2912,8 @@ export class DefaultService {
     }
 
     /**
-     * Unit List
+     * List Unit(s)
+     * List unit(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2947,7 +2985,8 @@ export class DefaultService {
     }
 
     /**
-     * User List
+     * List User(s)
+     * List user(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -3019,7 +3058,8 @@ export class DefaultService {
     }
 
     /**
-     * Widgets Edit
+     * Edit Widget(s)
+     * Edit widget(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -3092,6 +3132,7 @@ export class DefaultService {
 
     /**
      * Add Workflow Definition
+     * Add new workflow definition
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -3163,7 +3204,8 @@ export class DefaultService {
     }
 
     /**
-     * List Workflow Definitions
+     * List Workflow Definition(s)
+     * List workflow definition(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -3236,6 +3278,7 @@ export class DefaultService {
 
     /**
      * Add Workflow Form
+     * Add new workflow form
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -3308,6 +3351,7 @@ export class DefaultService {
 
     /**
      * Workflow Form List
+     * List workflow form(s)
      * @param query The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
