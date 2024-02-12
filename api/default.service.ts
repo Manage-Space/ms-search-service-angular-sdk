@@ -140,22 +140,22 @@ export class DefaultService {
     /**
      * Change Site
      * Change the current site
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public changeSite(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<ChangeSite200Response>;
-    public changeSite(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<ChangeSite200Response>>;
-    public changeSite(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<ChangeSite200Response>>;
-    public changeSite(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling changeSite.');
+    public changeSite(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<ChangeSite200Response>;
+    public changeSite(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<ChangeSite200Response>>;
+    public changeSite(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<ChangeSite200Response>>;
+    public changeSite(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling changeSite.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -182,6 +182,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -205,6 +210,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -213,22 +219,22 @@ export class DefaultService {
     /**
      * Add Contact
      * Add new contact (includes individual or company)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public contactAdd(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<ContactAdd200Response>;
-    public contactAdd(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<ContactAdd200Response>>;
-    public contactAdd(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<ContactAdd200Response>>;
-    public contactAdd(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling contactAdd.');
+    public contactAdd(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<ContactAdd200Response>;
+    public contactAdd(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<ContactAdd200Response>>;
+    public contactAdd(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<ContactAdd200Response>>;
+    public contactAdd(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling contactAdd.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -255,6 +261,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -278,6 +289,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -286,22 +298,22 @@ export class DefaultService {
     /**
      * List Contact(s)
      * List contact(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public contactList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public contactList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public contactList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public contactList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling contactList.');
+    public contactList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public contactList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public contactList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public contactList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling contactList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -328,6 +340,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -351,6 +368,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -359,22 +377,22 @@ export class DefaultService {
     /**
      * List Event(s)
      * List event(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public eventList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public eventList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public eventList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public eventList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling eventList.');
+    public eventList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public eventList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public eventList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public eventList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling eventList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -401,6 +419,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -424,6 +447,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -432,22 +456,22 @@ export class DefaultService {
     /**
      * Add Fee
      * Add new type of fee
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public feeAdd(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<FeeAdd200Response>;
-    public feeAdd(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<FeeAdd200Response>>;
-    public feeAdd(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<FeeAdd200Response>>;
-    public feeAdd(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling feeAdd.');
+    public feeAdd(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<FeeAdd200Response>;
+    public feeAdd(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<FeeAdd200Response>>;
+    public feeAdd(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<FeeAdd200Response>>;
+    public feeAdd(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling feeAdd.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -474,6 +498,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -497,6 +526,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -505,22 +535,22 @@ export class DefaultService {
     /**
      * List Fee(s)
      * List fee type(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public feeList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public feeList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public feeList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public feeList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling feeList.');
+    public feeList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public feeList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public feeList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public feeList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling feeList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -547,6 +577,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -570,6 +605,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -578,22 +614,22 @@ export class DefaultService {
     /**
      * List Invoice(s)
      * List invoice(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public invoiceList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public invoiceList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public invoiceList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public invoiceList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling invoiceList.');
+    public invoiceList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public invoiceList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public invoiceList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public invoiceList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling invoiceList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -620,6 +656,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -643,6 +684,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -651,22 +693,22 @@ export class DefaultService {
     /**
      * List Ledger(s)
      * List ledger(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public ledgerList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public ledgerList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public ledgerList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public ledgerList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling ledgerList.');
+    public ledgerList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public ledgerList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public ledgerList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public ledgerList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling ledgerList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -693,6 +735,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -716,6 +763,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -724,22 +772,22 @@ export class DefaultService {
     /**
      * Log Out
      * Log out of the system
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public logOut(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public logOut(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public logOut(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public logOut(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling logOut.');
+    public logOut(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public logOut(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public logOut(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public logOut(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling logOut.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -766,6 +814,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -789,6 +842,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -797,22 +851,22 @@ export class DefaultService {
     /**
      * Move In
      * Move a customer into a unit
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public moveIn(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<MoveIn200Response>;
-    public moveIn(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<MoveIn200Response>>;
-    public moveIn(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<MoveIn200Response>>;
-    public moveIn(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling moveIn.');
+    public moveIn(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<MoveIn200Response>;
+    public moveIn(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<MoveIn200Response>>;
+    public moveIn(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<MoveIn200Response>>;
+    public moveIn(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling moveIn.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -839,6 +893,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -862,6 +921,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -870,22 +930,22 @@ export class DefaultService {
     /**
      * Move Out
      * Move a customer out of a unit
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public moveOut(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<MoveOut200Response>;
-    public moveOut(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<MoveOut200Response>>;
-    public moveOut(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<MoveOut200Response>>;
-    public moveOut(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling moveOut.');
+    public moveOut(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<MoveOut200Response>;
+    public moveOut(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<MoveOut200Response>>;
+    public moveOut(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<MoveOut200Response>>;
+    public moveOut(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling moveOut.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -912,6 +972,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -935,6 +1000,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -943,22 +1009,22 @@ export class DefaultService {
     /**
      * Notifications
      * View the notifications screen
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public notifications(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public notifications(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public notifications(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public notifications(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling notifications.');
+    public notifications(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public notifications(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public notifications(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public notifications(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling notifications.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -985,6 +1051,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1008,6 +1079,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1016,22 +1088,22 @@ export class DefaultService {
     /**
      * Add Pricing Group
      * Add new pricing group
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public pricingGroupAdd(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<PricingGroupAdd200Response>;
-    public pricingGroupAdd(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<PricingGroupAdd200Response>>;
-    public pricingGroupAdd(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<PricingGroupAdd200Response>>;
-    public pricingGroupAdd(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling pricingGroupAdd.');
+    public pricingGroupAdd(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<PricingGroupAdd200Response>;
+    public pricingGroupAdd(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<PricingGroupAdd200Response>>;
+    public pricingGroupAdd(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<PricingGroupAdd200Response>>;
+    public pricingGroupAdd(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling pricingGroupAdd.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1058,6 +1130,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1081,6 +1158,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1089,22 +1167,22 @@ export class DefaultService {
     /**
      * List Pricing Group(s)
      * List pricing group(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public pricingGroupList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public pricingGroupList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public pricingGroupList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public pricingGroupList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling pricingGroupList.');
+    public pricingGroupList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public pricingGroupList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public pricingGroupList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public pricingGroupList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling pricingGroupList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1131,6 +1209,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1154,6 +1237,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1162,22 +1246,22 @@ export class DefaultService {
     /**
      * Add Product
      * Add new product/merchandise item
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public productAdd(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<ProductAdd200Response>;
-    public productAdd(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<ProductAdd200Response>>;
-    public productAdd(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<ProductAdd200Response>>;
-    public productAdd(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling productAdd.');
+    public productAdd(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<ProductAdd200Response>;
+    public productAdd(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<ProductAdd200Response>>;
+    public productAdd(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<ProductAdd200Response>>;
+    public productAdd(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling productAdd.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1204,6 +1288,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1227,6 +1316,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1235,22 +1325,22 @@ export class DefaultService {
     /**
      * Add Product Category
      * Add new product/merchandise item category
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public productCategoryAdd(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<ProductCategoryAdd200Response>;
-    public productCategoryAdd(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<ProductCategoryAdd200Response>>;
-    public productCategoryAdd(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<ProductCategoryAdd200Response>>;
-    public productCategoryAdd(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling productCategoryAdd.');
+    public productCategoryAdd(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<ProductCategoryAdd200Response>;
+    public productCategoryAdd(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<ProductCategoryAdd200Response>>;
+    public productCategoryAdd(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<ProductCategoryAdd200Response>>;
+    public productCategoryAdd(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling productCategoryAdd.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1277,6 +1367,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1300,6 +1395,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1308,22 +1404,22 @@ export class DefaultService {
     /**
      * List Product Category(s)
      * List product/merchandise item category/ies
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public productCategoryList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public productCategoryList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public productCategoryList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public productCategoryList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling productCategoryList.');
+    public productCategoryList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public productCategoryList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public productCategoryList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public productCategoryList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling productCategoryList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1350,6 +1446,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1373,6 +1474,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1381,22 +1483,22 @@ export class DefaultService {
     /**
      * List Product(s)
      * List product(s)/merchandise item(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public productList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public productList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public productList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public productList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling productList.');
+    public productList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public productList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public productList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public productList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling productList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1423,6 +1525,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1446,6 +1553,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1454,22 +1562,22 @@ export class DefaultService {
     /**
      * Release Notes
      * Show platform release notes
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public releaseNotes(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public releaseNotes(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public releaseNotes(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public releaseNotes(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling releaseNotes.');
+    public releaseNotes(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public releaseNotes(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public releaseNotes(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public releaseNotes(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling releaseNotes.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1496,6 +1604,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1519,6 +1632,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1527,22 +1641,22 @@ export class DefaultService {
     /**
      * List Rental(s)
      * List rental(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public rentalList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public rentalList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public rentalList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public rentalList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling rentalList.');
+    public rentalList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public rentalList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public rentalList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public rentalList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling rentalList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1569,6 +1683,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1592,6 +1711,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1600,22 +1720,22 @@ export class DefaultService {
     /**
      * Run a Report
      * Generate/run a report, including performing any database query to calculate totals or other data
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public report(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<Report200Response>;
-    public report(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<Report200Response>>;
-    public report(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<Report200Response>>;
-    public report(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling report.');
+    public report(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<Report200Response>;
+    public report(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Report200Response>>;
+    public report(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Report200Response>>;
+    public report(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling report.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1642,6 +1762,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1665,6 +1790,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1673,22 +1799,22 @@ export class DefaultService {
     /**
      * Add Reservation
      * Make a new reservation for a unit
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public reservationAdd(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<ReservationAdd200Response>;
-    public reservationAdd(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<ReservationAdd200Response>>;
-    public reservationAdd(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<ReservationAdd200Response>>;
-    public reservationAdd(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling reservationAdd.');
+    public reservationAdd(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<ReservationAdd200Response>;
+    public reservationAdd(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<ReservationAdd200Response>>;
+    public reservationAdd(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<ReservationAdd200Response>>;
+    public reservationAdd(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling reservationAdd.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1715,6 +1841,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1738,6 +1869,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1746,22 +1878,22 @@ export class DefaultService {
     /**
      * List Reservation(s)
      * List reservation(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public reservationList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public reservationList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public reservationList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public reservationList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling reservationList.');
+    public reservationList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public reservationList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public reservationList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public reservationList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling reservationList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1788,6 +1920,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1811,6 +1948,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1819,22 +1957,22 @@ export class DefaultService {
     /**
      * Reset Data
      * Reset data
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public resetData(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public resetData(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public resetData(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public resetData(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling resetData.');
+    public resetData(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public resetData(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public resetData(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public resetData(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling resetData.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1861,6 +1999,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1884,6 +2027,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1892,22 +2036,22 @@ export class DefaultService {
     /**
      * Appearance Settings
      * Update appearance settings incl. light/dark mode, unit status color, and showing grid/labels on the 3D map
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public settingsAppearance(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<SettingsAppearance200Response>;
-    public settingsAppearance(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<SettingsAppearance200Response>>;
-    public settingsAppearance(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<SettingsAppearance200Response>>;
-    public settingsAppearance(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling settingsAppearance.');
+    public settingsAppearance(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<SettingsAppearance200Response>;
+    public settingsAppearance(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SettingsAppearance200Response>>;
+    public settingsAppearance(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SettingsAppearance200Response>>;
+    public settingsAppearance(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling settingsAppearance.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1934,6 +2078,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -1957,6 +2106,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1965,22 +2115,22 @@ export class DefaultService {
     /**
      * Language Settings
      * Update language settings
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public settingsLanguage(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<SettingsLanguage200Response>;
-    public settingsLanguage(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<SettingsLanguage200Response>>;
-    public settingsLanguage(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<SettingsLanguage200Response>>;
-    public settingsLanguage(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling settingsLanguage.');
+    public settingsLanguage(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<SettingsLanguage200Response>;
+    public settingsLanguage(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SettingsLanguage200Response>>;
+    public settingsLanguage(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SettingsLanguage200Response>>;
+    public settingsLanguage(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling settingsLanguage.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2007,6 +2157,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2030,6 +2185,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2038,22 +2194,22 @@ export class DefaultService {
     /**
      * Organization Settings
      * Update organization settings incl. name, description, currency, days before late/lien/overlocked/move-out, prorate move-out threshold date, notification delay, max reminder attempts, billing cycle type or timezone
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public settingsOrganization(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<SettingsOrganization200Response>;
-    public settingsOrganization(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<SettingsOrganization200Response>>;
-    public settingsOrganization(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<SettingsOrganization200Response>>;
-    public settingsOrganization(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling settingsOrganization.');
+    public settingsOrganization(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<SettingsOrganization200Response>;
+    public settingsOrganization(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SettingsOrganization200Response>>;
+    public settingsOrganization(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SettingsOrganization200Response>>;
+    public settingsOrganization(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling settingsOrganization.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2080,6 +2236,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2103,6 +2264,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2111,22 +2273,22 @@ export class DefaultService {
     /**
      * Show Floor
      * Show specific floor on 3D map
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public showFloor(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<ShowFloor200Response>;
-    public showFloor(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<ShowFloor200Response>>;
-    public showFloor(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<ShowFloor200Response>>;
-    public showFloor(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling showFloor.');
+    public showFloor(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<ShowFloor200Response>;
+    public showFloor(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<ShowFloor200Response>>;
+    public showFloor(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<ShowFloor200Response>>;
+    public showFloor(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling showFloor.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2153,6 +2315,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2176,6 +2343,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2184,22 +2352,22 @@ export class DefaultService {
     /**
      * Smart Search
      * Performs a smart search using a query string
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public smartSearch(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<SmartSearch200Response>;
-    public smartSearch(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<SmartSearch200Response>>;
-    public smartSearch(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<SmartSearch200Response>>;
-    public smartSearch(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling smartSearch.');
+    public smartSearch(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<SmartSearch200Response>;
+    public smartSearch(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SmartSearch200Response>>;
+    public smartSearch(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SmartSearch200Response>>;
+    public smartSearch(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling smartSearch.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2226,6 +2394,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2249,6 +2422,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2257,22 +2431,22 @@ export class DefaultService {
     /**
      * Status Filters
      * Set active unit status filters
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public statusFilters(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<StatusFilters200Response>;
-    public statusFilters(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<StatusFilters200Response>>;
-    public statusFilters(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<StatusFilters200Response>>;
-    public statusFilters(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling statusFilters.');
+    public statusFilters(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<StatusFilters200Response>;
+    public statusFilters(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<StatusFilters200Response>>;
+    public statusFilters(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<StatusFilters200Response>>;
+    public statusFilters(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling statusFilters.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2299,6 +2473,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2322,6 +2501,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2330,22 +2510,22 @@ export class DefaultService {
     /**
      * Add Subscription Product
      * Add new subscription product item
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public subscriptionProductAdd(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<SubscriptionProductAdd200Response>;
-    public subscriptionProductAdd(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<SubscriptionProductAdd200Response>>;
-    public subscriptionProductAdd(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<SubscriptionProductAdd200Response>>;
-    public subscriptionProductAdd(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling subscriptionProductAdd.');
+    public subscriptionProductAdd(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<SubscriptionProductAdd200Response>;
+    public subscriptionProductAdd(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SubscriptionProductAdd200Response>>;
+    public subscriptionProductAdd(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SubscriptionProductAdd200Response>>;
+    public subscriptionProductAdd(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling subscriptionProductAdd.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2372,6 +2552,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2395,6 +2580,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2403,22 +2589,22 @@ export class DefaultService {
     /**
      * Add Subscription Product Category
      * Add new subscription product item category
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public subscriptionProductCategoryAdd(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<SubscriptionProductCategoryAdd200Response>;
-    public subscriptionProductCategoryAdd(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<SubscriptionProductCategoryAdd200Response>>;
-    public subscriptionProductCategoryAdd(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<SubscriptionProductCategoryAdd200Response>>;
-    public subscriptionProductCategoryAdd(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling subscriptionProductCategoryAdd.');
+    public subscriptionProductCategoryAdd(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<SubscriptionProductCategoryAdd200Response>;
+    public subscriptionProductCategoryAdd(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SubscriptionProductCategoryAdd200Response>>;
+    public subscriptionProductCategoryAdd(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SubscriptionProductCategoryAdd200Response>>;
+    public subscriptionProductCategoryAdd(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling subscriptionProductCategoryAdd.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2445,6 +2631,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2468,6 +2659,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2476,22 +2668,22 @@ export class DefaultService {
     /**
      * Subscription Product Category List
      * List subscription product item category/ies
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public subscriptionProductCategoryList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public subscriptionProductCategoryList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public subscriptionProductCategoryList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public subscriptionProductCategoryList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling subscriptionProductCategoryList.');
+    public subscriptionProductCategoryList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public subscriptionProductCategoryList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public subscriptionProductCategoryList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public subscriptionProductCategoryList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling subscriptionProductCategoryList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2518,6 +2710,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2541,6 +2738,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2549,22 +2747,22 @@ export class DefaultService {
     /**
      * List Subscription Product(s)
      * List subscription product item(s), incl. insurance but excl. rentals
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public subscriptionProductList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public subscriptionProductList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public subscriptionProductList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public subscriptionProductList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling subscriptionProductList.');
+    public subscriptionProductList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public subscriptionProductList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public subscriptionProductList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public subscriptionProductList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling subscriptionProductList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2591,6 +2789,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2614,6 +2817,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2622,22 +2826,22 @@ export class DefaultService {
     /**
      * Add Tax Rate
      * Add new tax rate
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public taxRateAdd(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<TaxRateAdd200Response>;
-    public taxRateAdd(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<TaxRateAdd200Response>>;
-    public taxRateAdd(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<TaxRateAdd200Response>>;
-    public taxRateAdd(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling taxRateAdd.');
+    public taxRateAdd(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<TaxRateAdd200Response>;
+    public taxRateAdd(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<TaxRateAdd200Response>>;
+    public taxRateAdd(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<TaxRateAdd200Response>>;
+    public taxRateAdd(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling taxRateAdd.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2664,6 +2868,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2687,6 +2896,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2695,22 +2905,22 @@ export class DefaultService {
     /**
      * List Tax Rate(s)
      * List tax rate(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public taxRateList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public taxRateList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public taxRateList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public taxRateList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling taxRateList.');
+    public taxRateList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public taxRateList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public taxRateList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public taxRateList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling taxRateList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2737,6 +2947,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2760,6 +2975,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2768,22 +2984,22 @@ export class DefaultService {
     /**
      * Top Down View
      * Move camera on 3D map to display a top-down view of the facility
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public topDownView(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public topDownView(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public topDownView(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public topDownView(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling topDownView.');
+    public topDownView(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public topDownView(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public topDownView(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public topDownView(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling topDownView.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2810,6 +3026,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2833,6 +3054,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2841,22 +3063,22 @@ export class DefaultService {
     /**
      * List Transaction(s)
      * List transaction(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public transactionList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public transactionList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public transactionList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public transactionList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling transactionList.');
+    public transactionList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public transactionList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public transactionList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public transactionList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling transactionList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2883,6 +3105,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2906,6 +3133,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2914,22 +3142,22 @@ export class DefaultService {
     /**
      * List Unit(s)
      * List unit(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public unitList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public unitList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public unitList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public unitList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling unitList.');
+    public unitList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public unitList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public unitList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public unitList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling unitList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -2956,6 +3184,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -2979,6 +3212,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -2987,22 +3221,22 @@ export class DefaultService {
     /**
      * List User(s)
      * List user(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public userList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public userList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public userList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public userList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling userList.');
+    public userList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public userList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public userList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public userList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling userList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -3029,6 +3263,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -3052,6 +3291,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -3060,22 +3300,22 @@ export class DefaultService {
     /**
      * Edit Widget(s)
      * Edit widget(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public widgetsEdit(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public widgetsEdit(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public widgetsEdit(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public widgetsEdit(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling widgetsEdit.');
+    public widgetsEdit(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public widgetsEdit(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public widgetsEdit(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public widgetsEdit(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling widgetsEdit.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -3102,6 +3342,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -3125,6 +3370,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -3133,22 +3379,22 @@ export class DefaultService {
     /**
      * Add Workflow Definition
      * Add new workflow definition
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public workflowDefinitionAdd(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<WorkflowDefinitionAdd200Response>;
-    public workflowDefinitionAdd(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<WorkflowDefinitionAdd200Response>>;
-    public workflowDefinitionAdd(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<WorkflowDefinitionAdd200Response>>;
-    public workflowDefinitionAdd(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling workflowDefinitionAdd.');
+    public workflowDefinitionAdd(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<WorkflowDefinitionAdd200Response>;
+    public workflowDefinitionAdd(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<WorkflowDefinitionAdd200Response>>;
+    public workflowDefinitionAdd(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<WorkflowDefinitionAdd200Response>>;
+    public workflowDefinitionAdd(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling workflowDefinitionAdd.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -3175,6 +3421,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -3198,6 +3449,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -3206,22 +3458,22 @@ export class DefaultService {
     /**
      * List Workflow Definition(s)
      * List workflow definition(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public workflowDefinitionList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public workflowDefinitionList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public workflowDefinitionList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public workflowDefinitionList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling workflowDefinitionList.');
+    public workflowDefinitionList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public workflowDefinitionList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public workflowDefinitionList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public workflowDefinitionList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling workflowDefinitionList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -3248,6 +3500,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -3271,6 +3528,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -3279,22 +3537,22 @@ export class DefaultService {
     /**
      * Add Workflow Form
      * Add new workflow form
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public workflowFormAdd(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<WorkflowFormAdd200Response>;
-    public workflowFormAdd(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<WorkflowFormAdd200Response>>;
-    public workflowFormAdd(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<WorkflowFormAdd200Response>>;
-    public workflowFormAdd(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling workflowFormAdd.');
+    public workflowFormAdd(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<WorkflowFormAdd200Response>;
+    public workflowFormAdd(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<WorkflowFormAdd200Response>>;
+    public workflowFormAdd(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<WorkflowFormAdd200Response>>;
+    public workflowFormAdd(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling workflowFormAdd.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -3321,6 +3579,11 @@ export class DefaultService {
         let localVarHttpContext: HttpContext | undefined = options && options.context;
         if (localVarHttpContext === undefined) {
             localVarHttpContext = new HttpContext();
+        }
+
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
         }
 
 
@@ -3344,6 +3607,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -3352,22 +3616,22 @@ export class DefaultService {
     /**
      * Workflow Form List
      * List workflow form(s)
-     * @param query The search query string
+     * @param q The search query string
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public workflowFormList(query: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<CommonResponse>;
-    public workflowFormList(query: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<CommonResponse>>;
-    public workflowFormList(query: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<CommonResponse>>;
-    public workflowFormList(query: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
-        if (query === null || query === undefined) {
-            throw new Error('Required parameter query was null or undefined when calling workflowFormList.');
+    public workflowFormList(q: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<CommonResponse>;
+    public workflowFormList(q: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CommonResponse>>;
+    public workflowFormList(q: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CommonResponse>>;
+    public workflowFormList(q: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (q === null || q === undefined) {
+            throw new Error('Required parameter q was null or undefined when calling workflowFormList.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (query !== undefined && query !== null) {
+        if (q !== undefined && q !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>query, 'query');
+            <any>q, 'q');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -3396,6 +3660,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -3417,6 +3686,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
